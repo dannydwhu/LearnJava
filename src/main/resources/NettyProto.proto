@@ -1,0 +1,25 @@
+syntax = "proto3";
+package org.java.learn.proto;
+
+enum ProtoPackageType {
+    HEARTBEAT     = 0;
+    REQUEST       = 1;
+    RESPONSE      = 2;
+}
+
+message ProtoPackage {
+    ProtoPackageType   type = 1;
+    bytes              body = 2;
+}
+
+message ProtoRequest {
+    string requestId = 1;
+    string uri       = 2;
+    bytes  body      = 3;
+}
+
+message ProtoChatMessage{
+    string text = 1;
+    string name = 2;
+    uint64 id   = 3;
+}
